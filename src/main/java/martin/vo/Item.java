@@ -2,9 +2,13 @@ package martin.vo;
 
 public class Item {
   private String itemLabel;
-  private String itemName;
-  private String stateCode;
   private double price;
+
+  public Item(){}
+  public Item(String itemLabel, double price) {
+    this.itemLabel = itemLabel;
+    this.price = price;
+  }
 
   public String getItemLabel() {
     return itemLabel;
@@ -12,14 +16,6 @@ public class Item {
 
   public void setItemLabel(String itemLabel) {
     this.itemLabel = itemLabel;
-  }
-
-  public String getItemName() {
-    return itemName;
-  }
-
-  public void setItemName(String itemName) {
-    this.itemName = itemName;
   }
 
   public double getPrice() {

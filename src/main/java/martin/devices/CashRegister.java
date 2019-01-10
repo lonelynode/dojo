@@ -16,7 +16,7 @@ public class CashRegister {
   public static Map<Integer, Double> disCountInfo = new TreeMap<Integer, Double>();
 
   static {
-    stateTax.put("UT", 0.8);
+    stateTax.put("UT", 0.08);
     disCountInfo.put(3000, 0.9);
     disCountInfo.put(5000, 0.7);
     disCountInfo.put(10000, 0.5);
@@ -50,5 +50,29 @@ public class CashRegister {
       }
     }
     return null;
+  }
+
+  public Order getOrder() {
+    return order;
+  }
+
+  public void setOrder(Order order) {
+    this.order = order;
+  }
+
+  public Printer getPrinter() {
+    return printer;
+  }
+
+  public void setPrinter(Printer printer) {
+    this.printer = printer;
+  }
+
+  public Calculator getCalculator() {
+    return calculator;
+  }
+
+  public void setCalculator(Calculator calculator) {
+    this.calculator = calculator;
   }
 }

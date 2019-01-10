@@ -19,7 +19,7 @@ public class OrdinaryCalculator implements Calculator {
   public Order calculateOrder(Order order) {
     this.order = order;
     calculateTotalPrice();
-    calculateReducePrice();
+    calculateActualPrice();
     calculateTaxes(stateCode);
     calculatePayPrice();
     return this.order;
@@ -34,10 +34,10 @@ public class OrdinaryCalculator implements Calculator {
     this.order.setTotalPrice(totalPrice);
   }
 
-  public void calculateReducePrice() {
+  public void calculateActualPrice() {
     calculateDiscount();
-    double reducePrice = this.order.getDiscount() * this.order.getTotalPrice();
-    this.order.setReducePrice(reducePrice);
+    double actualPrice = this.order.getDiscount() * this.order.getTotalPrice();
+    this.order.setActualPrice(actualPrice);
   }
 
   public void calculateDiscount() {
@@ -51,17 +51,20 @@ public class OrdinaryCalculator implements Calculator {
         discount = areaDiscount;
       }
     }
-    this.order.setDiscount(1);
+    this.order.setDiscount(discount);
   }
 
   public void calculateTaxes(String stateCode) {
     double taxRate = CashRegister.stateTax.get(stateCode);
     double taxes = this.order.getActualPrice() * taxRate;
+    this.order.setTaxs(taxes);
   }
 
   public void calculatePayPrice() {
     double payPrice = this.order.getActualPrice() + this.order.getTaxs();
     this.order.setPayPrice(payPrice);
   }
+
+
 
 }
