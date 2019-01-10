@@ -1,4 +1,4 @@
-package martin.vo;
+package martin.devices;
 
 import martin.interfaces.Printer;
 

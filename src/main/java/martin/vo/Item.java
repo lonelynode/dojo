@@ -3,6 +3,7 @@ package martin.vo;
 public class Item {
   private String itemLabel;
   private String itemName;
+  private String stateCode;
   private double price;
 
   public String getItemLabel() {
