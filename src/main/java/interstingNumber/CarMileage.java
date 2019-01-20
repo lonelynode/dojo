@@ -23,22 +23,26 @@ public class CarMileage {
   }
 
   private static boolean digitIsPalindrome(int number) {
+    Integer[] array = numberToDigitArray(number);
+    int arrayEndIndex = array.length - 1;
+    for(int i = 0; i < array.length / 2; i++) {
+      if(array[i] != array[arrayEndIndex - i])
+        return false;
+    }
     return true;
   }
 
   private static boolean digitSequentialAndDesc(int number) {
     Integer[] array = numberToDigitArray(number);
-    boolean isDigitSequentialAndDesc = true;
     for(int i = array.length - 1; i > 0; i--) {
       if(array[i] == 0) {
         array[i] = 10;
       }
       if ((array[i] - array[i - 1]) % 10 != 1) {
-        isDigitSequentialAndDesc = false;
-        break;
+        return false;
       }
     }
-    return isDigitSequentialAndDesc;
+    return true;
   }
 
   private static boolean digitFollowedByZeros(int number) {
@@ -49,7 +53,6 @@ public class CarMileage {
 
   private static boolean digitSequentialAndInc(int number) {
     Integer[] array = numberToDigitArray(number);
-    boolean isDigitSequentialAndInc = true;
     for(int i = array.length - 1; i > 0; i--) {
       if(array[i] == 0) {
         array[i] = 10;
@@ -58,11 +61,10 @@ public class CarMileage {
         array[i - 1] = 10;
       }
       if((array[i - 1] - array[i]) % 10 != 1) {
-        isDigitSequentialAndInc = false;
-        break;
+        return false;
       }
     }
-    return isDigitSequentialAndInc;
+    return true;
   }
 
   private static Integer[] numberToDigitArray(int number) {
