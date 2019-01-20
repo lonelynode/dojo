@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CarMileage {
 
-  public static int isInteresting(int number) {
+  public static int isInteresting(int number, Integer [] awesomePhrases) {
     if(number < 100) {
       return 0;
     }
@@ -18,8 +18,17 @@ public class CarMileage {
         return 1;
       else if(digitIsPalindrome(number))
         return 1;
+      else if(matchAwesomePhrases(number, awesomePhrases))
+        return 1;
       return 0;
     }
+  }
+
+  private static boolean matchAwesomePhrases(int number, Integer[] awesomePhrases) {
+    if(awesomePhrases.length == 0)
+      return false;
+    else
+      return true;
   }
 
   private static boolean digitIsPalindrome(int number) {
