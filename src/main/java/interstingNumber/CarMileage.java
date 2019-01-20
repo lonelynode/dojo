@@ -21,7 +21,17 @@ public class CarMileage {
   }
 
   private static boolean digitSequentialAndDenc(int number) {
-    return true;
+    Integer[] array = numberToDigitArray(number);
+    boolean isDigitSequentialAndDesc = true;
+    for(int i = 1; i < array.length; i++) {
+      if ((array[i] - array[i - 1]) % 10 == 1) {
+        isDigitSequentialAndDesc = true;
+      } else {
+        isDigitSequentialAndDesc = false;
+        break;
+      }
+    }
+    return isDigitSequentialAndDesc;
   }
 
   private static boolean digitFollowedByZeros(int number) {
