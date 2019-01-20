@@ -20,4 +20,12 @@ public class CarMileageTest {
     long actualResult = CarMileage.isInteresting(inputNumber);
     Assert.assertEquals(expectedResult, actualResult);
   }
+
+  @Test
+  public void should_return_0_when_check_interesting_number_given_number_digit_followed_by_all_zeros_100() {
+    long inputNumber = 100;
+    long expectedResult = 1;
+    long actualResult = CarMileage.isInteresting(inputNumber);
+    Assert.assertEquals(expectedResult, actualResult);
+  }
 }
