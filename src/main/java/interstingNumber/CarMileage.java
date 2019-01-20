@@ -27,8 +27,13 @@ public class CarMileage {
   private static boolean matchAwesomePhrases(int number, Integer[] awesomePhrases) {
     if(awesomePhrases.length == 0)
       return false;
-    else
-      return true;
+    else {
+      for(Integer awesomePhrase: awesomePhrases) {
+        if(awesomePhrase == number)
+          return true;
+      }
+    }
+    return false;
   }
 
   private static boolean digitIsPalindrome(int number) {
