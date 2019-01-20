@@ -14,8 +14,14 @@ public class CarMileage {
         return 1;
       else if(digitSequentialAndInc(number))
         return 1;
+      else if(digitSequentialAndDenc(number))
+        return 1;
       return 0;
     }
+  }
+
+  private static boolean digitSequentialAndDenc(int number) {
+    return true;
   }
 
   private static boolean digitFollowedByZeros(int number) {

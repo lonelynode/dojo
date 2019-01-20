@@ -26,9 +26,16 @@ when check is interestingNumber
 then output 1
 ````
 
-Task 4;
+Task 5;
 ````
 given a number which the digits are sequential & incementing: 890
+when check is interestingNumber
+then output 1
+````
+
+Task 6;
+````
+given a number which the digits are sequential & incementing: 321
 when check is interestingNumber
 then output 1
 ````
