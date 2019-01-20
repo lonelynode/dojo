@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CarMileage {
 
-  public static long isInteresting(long number) {
+  public static int isInteresting(int number) {
     if(number < 100) {
       return 0;
     }
@@ -18,17 +18,23 @@ public class CarMileage {
     }
   }
 
-  private static boolean digitFollowedByZeros(long number) {
-    Long[] array = numberToDigitArray(number);
+  private static boolean digitFollowedByZeros(int number) {
+    Integer[] array = numberToDigitArray(number);
     int multiple = array.length - 1;
     return number % Math.pow(10, multiple) == 0;
   }
 
-  private static boolean digitSequentialAndInc(long number) {
-    Long[] array = numberToDigitArray(number);
+  private static boolean digitSequentialAndInc(int number) {
+    Integer[] array = numberToDigitArray(number);
     boolean isDigitSequentialAndInc = true;
     for(int i = array.length - 1; i > 0; i--) {
-      if(array[i - 1] - array[i] == 1) {
+      if(array[i] == 0) {
+        array[i] = 10;
+      }
+      if(array[i - 1] == 0) {
+        array[i - 1] = 10;
+      }
+      if((array[i - 1] - array[i]) % 10 == 1) {
         isDigitSequentialAndInc = true;
       }
       else {
@@ -39,9 +45,9 @@ public class CarMileage {
     return isDigitSequentialAndInc;
   }
 
-  private static Long[] numberToDigitArray(long number) {
-    List<Long> digitList = new ArrayList<Long>();
-    long digit = number % 10;
+  private static Integer[] numberToDigitArray(int number) {
+    List<Integer> digitList = new ArrayList<Integer>();
+    int digit = number % 10;
     digitList.add(digit);
     number /= 10;
     while(number > 0) {
@@ -49,7 +55,6 @@ public class CarMileage {
       digitList.add(digit);
       number /= 10;
     }
-    Long[] digitArray = digitList.toArray(new Long[0]);
-    return digitArray;
+    return digitList.toArray(new Integer[0]);
   }
 }
