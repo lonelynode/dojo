@@ -42,14 +42,14 @@ then output 1
 
 Task 7;
 ````
-given a number which the digits are sequential & incementing: 109
+given a number which the digits are sequential & decementing: 109
 when check is interestingNumber
 then output 1
 ````
 
 Task 8;
 ````
-given a number which the digits are sequential & incementing: 109
+given a number which the digits are a palindrome: 121
 when check is interestingNumber
 then output 1
 ````
