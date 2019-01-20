@@ -9,7 +9,7 @@ public class CarMileage {
     else {
       if(number % 10 == 0)
         return 1;
-      return 0;
+      return 1;
     }
   }
 }

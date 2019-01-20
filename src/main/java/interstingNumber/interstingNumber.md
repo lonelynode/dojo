@@ -18,3 +18,10 @@ given a number which Any digit followed by all zeros: 100
 when check is interestingNumber
 then output 1
 ````
+
+Task 4;
+````
+given a number which the digits are sequential & incementing: 123
+when check is interestingNumber
+then output 1
+````
