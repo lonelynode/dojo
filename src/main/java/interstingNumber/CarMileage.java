@@ -14,19 +14,20 @@ public class CarMileage {
         return 1;
       else if(digitSequentialAndInc(number))
         return 1;
-      else if(digitSequentialAndDenc(number))
+      else if(digitSequentialAndDesc(number))
         return 1;
       return 0;
     }
   }
 
-  private static boolean digitSequentialAndDenc(int number) {
+  private static boolean digitSequentialAndDesc(int number) {
     Integer[] array = numberToDigitArray(number);
     boolean isDigitSequentialAndDesc = true;
-    for(int i = 1; i < array.length; i++) {
-      if ((array[i] - array[i - 1]) % 10 == 1) {
-        isDigitSequentialAndDesc = true;
-      } else {
+    for(int i = array.length - 1; i > 0; i--) {
+      if(array[i] == 0) {
+        array[i] = 10;
+      }
+      if ((array[i] - array[i - 1]) % 10 != 1) {
         isDigitSequentialAndDesc = false;
         break;
       }
@@ -50,10 +51,7 @@ public class CarMileage {
       if(array[i - 1] == 0) {
         array[i - 1] = 10;
       }
-      if((array[i - 1] - array[i]) % 10 == 1) {
-        isDigitSequentialAndInc = true;
-      }
-      else {
+      if((array[i - 1] - array[i]) % 10 != 1) {
         isDigitSequentialAndInc = false;
         break;
       }
