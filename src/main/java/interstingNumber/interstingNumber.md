@@ -25,3 +25,10 @@ given a number which the digits are sequential & incementing: 123
 when check is interestingNumber
 then output 1
 ````
+
+Task 4;
+````
+given a number which the digits are sequential & incementing: 890
+when check is interestingNumber
+then output 1
+````

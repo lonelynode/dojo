@@ -10,12 +10,18 @@ public class CarMileage {
       return 0;
     }
     else {
-      if(number % 10 == 0)
+      if(digitFollowedByZeros(number))
         return 1;
       else if(digitSequentialAndInc(number))
         return 1;
       return 0;
     }
+  }
+
+  private static boolean digitFollowedByZeros(long number) {
+    Long[] array = numberToDigitArray(number);
+    int multiple = array.length - 1;
+    return number % Math.pow(10, multiple) == 0;
   }
 
   private static boolean digitSequentialAndInc(long number) {
