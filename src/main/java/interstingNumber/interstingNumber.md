@@ -39,3 +39,17 @@ given a number which the digits are sequential & incementing: 321
 when check is interestingNumber
 then output 1
 ````
+
+Task 7;
+````
+given a number which the digits are sequential & incementing: 109
+when check is interestingNumber
+then output 1
+````
+
+Task 8;
+````
+given a number which the digits are sequential & incementing: 109
+when check is interestingNumber
+then output 1
+````
